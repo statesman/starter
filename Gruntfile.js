@@ -4,9 +4,16 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
 
+    // Clean files from dist/ before build
+    clean: {
+      css: ["dist/*.css", "dist/*.css.map"],
+      js: ["dist/*.js", "dist/*.js.map"]
+    },
+
     // Transpile LESS
     less: {
       options: {
+        sourceMap: true,
         paths: ['bower_components/bootstrap/less']
       },
       prod: {
@@ -40,6 +47,22 @@ module.exports = function(grunt) {
           ]
         }
       }
+    },
+
+    // Watch for changes in LESS and JavaScript files,
+    // relint/retranspile when a file changes
+    watch: {
+      markup: {
+        files: ['index.php']
+      },
+      scripts: {
+        files: ['src/js/**.js'],
+        tasks: ['jshint', 'clean:js', 'uglify']
+      },
+      styles: {
+        files: ['src/css/**.less'],
+        tasks: ['clean:css', 'less']
+      }
     }
 
   });
@@ -48,7 +71,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('default', ['less', 'jshint', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'clean', 'less', 'uglify']);
 
 };
