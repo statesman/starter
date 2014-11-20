@@ -2,5 +2,5 @@
   var projectSite = "statesman";
   var projectChannel = "news";
   var projectCategory = "local";
-  var projectSubCategory = "election-results-map";
+  var projectSubCategory = ""; // name for specific project
 </script>
