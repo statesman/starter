@@ -44,7 +44,7 @@
 
     <?php /* CMG advertising and analytics */ ?>
     <?php include "includes/advertising.inc";?>
-    <?php include "../../common/metrics-head.js";?>
+    <?php include "includes/metrics-head.inc";?>
   </head>
   <body>
     <nav class="navbar navbar-default" role="navigation">
@@ -70,8 +70,8 @@
     <p id="legal" class="center-block text-center"><small>© 2014 <a href="http://www.coxmediagroup.com" target="_blank">Cox Media Group</a>. By using this website, you accept the terms of our <a href="http://www.mystatesman.com/visitor_agreement/" target="_blank">Visitor Agreement</a> and <a target="_blank" href="http://www.mystatesman.com/privacy_policy/">Privacy Policy</a>, and understand your options regarding <a target="_blank" href="http://www.mystatesman.com/privacy_policy/#ad-choices">Ad Choices</a><img src="http://media.cmgdigital.com/shared/img/photos/2012/02/29/d3/da/ad_choices_logo.png" alt="AdChoices">.</small></p>
 
     <?php /* CMG advertising and analytics */ ?>
-    <?php include "includes/project-metrics.js"; ?>
-    <?php include "../../common/metrics.js"; ?>
+    <?php include "includes/project-metrics.inc"; ?>
+    <?php include "includes/metrics.inc"; ?>
 
     <script src="dist/scripts.js"></script>
   </body>
